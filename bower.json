@@ -1,0 +1,24 @@
+{
+  "name": "js-error-logger",
+  "version": "0.1.0",
+  "homepage": "https://github.com/MaximOnline/JS-Logger",
+  "authors": [
+    "Anton Gorbunov",
+    "Ksenia Lvova",
+    "Nikolay Mendyaev"
+  ],
+  "description": "Script for catch errors and send them to server handler for storage.",
+  "main": "dist/main.js",
+  "keywords": [
+    "log",
+    "error"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "name": "js-error-logger",
+  "version": "0.1.0",
+  "description": "Catch js errors and send them to server.",
+  "main": "errors_logging.js",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "gulp": "^3.8.10",
+    "gulp-uglify": "^1.1.0"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MaximOnline/JS-Logger.git"
+  },
+  "keywords": [
+    "log",
+    "error"
+  ],
+  "authors": [
+    "Nikolay Mendyaev <newbiecraft@gmail.com>",
+    "Anton Gorbunov",
+    "Ksenia Lvova"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MaximOnline/JS-Logger/issues"
+  },
+  "homepage": "https://github.com/MaximOnline/JS-Logger"
+}
