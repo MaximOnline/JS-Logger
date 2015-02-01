@@ -2,14 +2,34 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <script src="/bower_components/json2/json2.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/json2/20140204/json2.min.js"></script>
     <script src="/error_logging.cache.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+    <script>
+        $(function(){
+            var result = false;
+            if ($('body').text()==='ERROR IS CATCHED') {
+                result = true;
+            }
+            window.global_test_results = {
+                "passed": result?1:0,
+                "failed": result?0:1,
+                "total": 1,
+                "duration": 1000,
+                "tests": [
+                    {
+                        "name": "catched",
+                        "result": result,
+                        "message": "catching",
+                        "duration": 1000
+                    }
+                ]
+            };
+        });
+    </script>
     <title>Error Cache Logging</title>
 </head>
 <body>
     <script src="/tests/error.js"></script>
-    <scirpt>
-
-    </scirpt>
 </body>
 </html>

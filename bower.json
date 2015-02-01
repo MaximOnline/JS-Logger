@@ -24,5 +24,8 @@
   "dependencies": {
     "mocha": "~2.1.0",
     "json2": "*"
+  },
+  "devDependencies": {
+    "jquery": "~2.1.3"
   }
 }
