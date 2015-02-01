@@ -3,9 +3,10 @@
   "version": "0.1.0",
   "description": "Catch js errors and send them to server.",
   "main": "errors_logging.js",
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-saucelabs": "^8.5.0",
     "gulp": "^3.8.10",
     "gulp-uglify": "^1.1.0"
   },
