@@ -4,9 +4,9 @@ module.exports = function(grunt) {
         'saucelabs-custom':{
             all:{
                 options:{
-                    username: 'klond90', // if not provided it'll default to ENV SAUCE_USERNAME (if applicable)
-                    key: 'saucelabs-key', // if not provided it'll default to ENV SAUCE_ACCESS_KEY (if applicable)
-                    urls: ['/tests/example_cache.html'],
+                    //username: 'klond90', // if not provided it'll default to ENV SAUCE_USERNAME (if applicable)
+                    //key: 'saucelabs-key', // if not provided it'll default to ENV SAUCE_ACCESS_KEY (if applicable)
+                    urls: ['SomeNameDevTeam.github.io/JS-Logger/tests/example_cache.html'],
                     build: process.env.CI_BUILD_NUMBER,
                     testname: 'Check Errors',
                     browsers: [{
