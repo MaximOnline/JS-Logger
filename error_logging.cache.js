@@ -13,6 +13,15 @@
         jsonScript.src = "https://cdnjs.cloudflare.com/ajax/libs/json2/20140204/json2.min.js";
         document.getElementsByTagName("head")[0].appendChild(jsonScript);
     }
+
+    //keys shim
+    if (typeof(Object.keys)==='undefined')
+    {
+        var keysScript = document.createElement('script');
+        keysScript = "text/javascript";
+        keysScript.src = "https://cdnjs.cloudflare.com/ajax/libs/es5-shim/4.0.6/es5-shim.min.js";
+        document.getElementsByTagName("head")[0].appendChild(keysScript);
+    }
     // Refer to https://gist.github.com/remy/350433
     try {
         // Test webstorage existence.
