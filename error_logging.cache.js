@@ -210,7 +210,7 @@
             var jsonData = JSON.stringify(msg.data);
             console.log('error' + jsonData);
             var img = new Image();
-            img.onload = function(){
+            img.onload = img.onerror = function(){
                 for (var i=0; i<msg.keys.length;i++)
                     CacheSender.mapData.release(msg.keys[i]);
                 if (testAdditionalHandler)
