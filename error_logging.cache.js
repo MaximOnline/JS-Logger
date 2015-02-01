@@ -9,7 +9,7 @@
     //include json if undefined
     if (typeof(JSON)==='undefined'){
         var jsonScript = document.createElement('script');
-        jsonScript = "text/javascript";
+        jsonScript.type = "text/javascript";
         jsonScript.src = "https://cdnjs.cloudflare.com/ajax/libs/json2/20140204/json2.min.js";
         document.getElementsByTagName("head")[0].appendChild(jsonScript);
     }
@@ -18,7 +18,7 @@
     if (typeof(Object.keys)==='undefined')
     {
         var keysScript = document.createElement('script');
-        keysScript = "text/javascript";
+        keysScript.type = "text/javascript";
         keysScript.src = "https://cdnjs.cloudflare.com/ajax/libs/es5-shim/4.0.6/es5-shim.min.js";
         document.getElementsByTagName("head")[0].appendChild(keysScript);
     }
