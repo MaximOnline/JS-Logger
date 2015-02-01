@@ -6,6 +6,14 @@
     <title>Error Logging</title>
 </head>
 <body>
-
+<div id="mocha"></div>
+<script src="jquery.js"></script>
+<script src="/bmocha.js"></script>
+<script>mocha.setup('bdd')</script>
+<script src="test.error.js"></script>
+<script>
+    mocha.globals(['jQuery']);
+    mocha.run();
+</script>
 </body>
 </html>

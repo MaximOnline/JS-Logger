@@ -3,6 +3,13 @@
     var BrowserStorage;
     var dataUrl = '/ajx/error_log.php?';
     var currentDomainOnly = true;
+    //include json if undefined
+    if (typeof(JSON)==='undefined'){
+        var jsonScript = document.createElement('script');
+        jsonScript = "text/javascript";
+        jsonScript.src = "https://cdnjs.cloudflare.com/ajax/libs/json2/20140204/json2.min.js";
+        document.getElementsByTagName("head")[0].appendChild(jsonScript);
+    }
     // Refer to https://gist.github.com/remy/350433
     try {
         // Test webstorage existence.

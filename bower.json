@@ -8,7 +8,7 @@
     "Nikolay Mendyaev"
   ],
   "description": "Script for catch errors and send them to server handler for storage.",
-  "main": "dist/main.js",
+  "main": "error_logging.cache.js",
   "keywords": [
     "log",
     "error"
@@ -20,5 +20,9 @@
     "bower_components",
     "test",
     "tests"
-  ]
+  ],
+  "dependencies": {
+    "mocha": "~2.1.0",
+    "json2": "*"
+  }
 }
