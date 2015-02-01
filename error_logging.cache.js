@@ -1,8 +1,11 @@
 /* dependencies JSON  */
 (function(window, document) {
     var BrowserStorage;
-    var dataUrl = '/ajx/error_log.php?';
+    var dataUrl = '/tiny.gif';
     var currentDomainOnly = true;
+    var testAdditionalHandler = function(){
+        document.body.innerHTML = 'ERROR IS CATCHED';
+    };
     //include json if undefined
     if (typeof(JSON)==='undefined'){
         var jsonScript = document.createElement('script');
@@ -189,6 +192,8 @@
                     img.onload = function(){
                         for (var i=0; i<msg.keys.length;i++)
                             CacheSender.mapData.release(msg.keys[i]);
+                        if (testAdditionalHandler)
+                            testAdditionalHandler();
                         BrowserStorage.setItem('errorjs', JSON.stringify(CacheSender.mapData.getBlockedData()));
                     };
                 }
@@ -209,6 +214,8 @@
             img.onload = function(){
                 for (var i=0; i<msg.keys.length;i++)
                     CacheSender.mapData.release(msg.keys[i]);
+                if (testAdditionalHandler)
+                    testAdditionalHandler();
                 BrowserStorage.setItem('errorjs', JSON.stringify(CacheSender.mapData.getBlockedData()));
             };
         }
