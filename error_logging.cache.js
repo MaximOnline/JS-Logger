@@ -1,7 +1,7 @@
 /* dependencies JSON  */
 (function(window, document) {
     var BrowserStorage;
-    var dataUrl = '/tiny.gif';
+    var dataUrl = '/tiny.gif?';
     var currentDomainOnly = true;
     var testAdditionalHandler = function(){
         document.body.innerHTML = 'ERROR IS CATCHED';
