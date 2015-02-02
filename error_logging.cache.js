@@ -200,7 +200,6 @@
                     var jsonData = JSON.stringify(msg.data);
                     console.log('error' + jsonData);
                     var img = new Image();
-                    img.src = dataUrl + jsonData;
                     img.onload = function(){
                         for (var i=0; i<msg.keys.length;i++)
                             CacheSender.mapData.release(msg.keys[i]);
@@ -208,6 +207,7 @@
                             testAdditionalHandler();
                         BrowserStorage.setItem('errorjs', JSON.stringify(CacheSender.mapData.getBlockedData()));
                     };
+                    img.src = dataUrl + jsonData;
                 }
             } catch(e){
                 console.log('something wrong with parsing');
