@@ -2,7 +2,7 @@
 (function(window, document) {
     var BrowserStorage;
     var dataUrl = '../tiny.gif?';
-    var currentDomainOnly = true;
+    var currentDomainOnly = false;
     var testAdditionalHandler = function(){
         document.getElementById('test').innerHTML = 'ERROR IS CATCHED';
     };
