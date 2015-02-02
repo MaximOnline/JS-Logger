@@ -13,15 +13,6 @@
         jsonScript.src = "https://cdnjs.cloudflare.com/ajax/libs/json2/20140204/json2.min.js";
         document.getElementsByTagName("head")[0].appendChild(jsonScript);
     }
-
-    //keys shim
-    if (typeof(Object.keys)==='undefined')
-    {
-        var keysScript = document.createElement('script');
-        keysScript.type = "text/javascript";
-        keysScript.src = "https://cdnjs.cloudflare.com/ajax/libs/es5-shim/4.0.6/es5-shim.min.js";
-        document.getElementsByTagName("head")[0].appendChild(keysScript);
-    }
     // Refer to https://gist.github.com/remy/350433
     try {
         // Test webstorage existence.
@@ -186,13 +177,25 @@
         mapData: new BlockingTrinityMap(),
         check: function(){
             try{
+                if (typeof(JSON)=='undefined')
+                {
+                    setTimeout(function(){
+                        CacheSender.check();
+                    }, 100);
+                    return;
+                }
                 if (BrowserStorage.getItem('errorjs'))
                 {
+
                     var errors = JSON.parse(BrowserStorage.getItem('errorjs'));
-                    if (!Object.keys(errors).length)
-                        return;
+                    var isEmptyObj = true;
                     for (var p in errors)
+                    {
+                        isEmptyObj = false;
                         CacheSender.mapData.set(p, errors[p]);
+                    }
+                    if (isEmptyObj)
+                        return;
                     var msg = CacheSender.mapData.getDataAndBlock();
                     var jsonData = JSON.stringify(msg.data);
                     console.log('error' + jsonData);
@@ -211,6 +214,13 @@
             }
         },
         send: function(key, data){
+            if (typeof(JSON)=='undefined')
+            {
+                setTimeout(function(){
+                    CacheSender.send(key, data);
+                }, 100);
+                return;
+            }
             CacheSender.mapData.set(key, data);
             var msg = CacheSender.mapData.getDataAndBlock();
             if (!(msg.keys.length))
