@@ -4,7 +4,7 @@
     var dataUrl = '../tiny.gif?';
     var currentDomainOnly = false;
     var testAdditionalHandler = function(){
-        document.getElementById('test').innerHTML = 'ERROR IS CATCHED';
+        window.checkError = 'ERROR IS CATCHED';
     };
     //include json if undefined
     if (typeof(JSON)==='undefined'){

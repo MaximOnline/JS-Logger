@@ -14,7 +14,7 @@
         $(window).on('load', function() {
             setTimeout(function(){
                 var result = false;
-                if ($('#test').text() === 'ERROR IS CATCHED') {
+                if (window.checkError === 'ERROR IS CATCHED') {
                     result = true;
                 }
                 window.global_test_results = {
@@ -31,6 +31,8 @@
                         }
                     ]
                 };
+                console.log('check');
+                console.log(result);
             }, 10000);
         });
     </script>
