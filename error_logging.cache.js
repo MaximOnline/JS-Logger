@@ -188,7 +188,7 @@
             try{
                 if (BrowserStorage.getItem('errorjs'))
                 {
-                    var errors = JSON.parse(Storage.getItem('errorjs'));
+                    var errors = JSON.parse(BrowserStorage.getItem('errorjs'));
                     if (!Object.keys(errors).length)
                         return;
                     for (var p in errors)
